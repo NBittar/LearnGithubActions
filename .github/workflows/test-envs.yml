@@ -1,0 +1,13 @@
+name: Testing Environments
+
+on: workflow_dispatch
+
+jobs:
+    deploy:
+        name: Deploy Dev
+        runs-on: ubuntu-latest
+        environment: DEV
+    
+        steps:
+            - name: Echo env variable
+              run: echo ${{ vars.TEST_DEV }}
