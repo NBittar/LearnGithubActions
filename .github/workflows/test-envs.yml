@@ -7,7 +7,7 @@ on:
 
 jobs:
     deploy:
-        if: ${{ !contains(github.event.head_commit.message, '[devdeploy]') }} 
+        if: ${{ contains(github.event.head_commit.message, '[devdeploy]') }} 
         name: Deploy Dev
         runs-on: ubuntu-latest
         environment: DEV
